@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+</head>
+<body>
+    <div id="level1">
+        <h1>Contact Us</h1>
+        <form id="contactForm">
+            <label for="contactType">I would like to:</label>
+            <select id="contactType" name="contactType">
+                <option value="make_suggestion">Make a suggestion</option>
+                <option value="make_complaint">Make a complaint</option>
+            </select><br>
+            <button type="button" onclick="showLevel2()">Next</button>
+        </form>
+    </div>
+
+    <div id="level2" style="display: none;">
+        <h1>Contact Us</h1>
+        <div id="responseMessage"></div>
+        <form id="submissionForm">
+            <!-- Fields for suggestion -->
+            <div id="suggestionFields" style="display: none;">
+                <label for="suggestion">Suggestion:</label>
+                <textarea id="suggestion" name="suggestion" required></textarea><br>
+            </div>
+
+            <!-- Fields for complaint -->
+            <div id="complaintFields" style="display: none;">
+                <label for="complaint">Complaint:</label>
+                <textarea id="complaint" name="complaint" required></textarea><br>
+            </div>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+            <button type="button" onclick="goBack()">Back</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -21,19 +21,9 @@ function submitForm() {
     };
 
     if (contactType === "make_suggestion") {
-        formData.brand = document.getElementById("brand").value;
-        formData.productName = document.getElementById("productName").value;
         formData.suggestion = document.getElementById("suggestion").value;
-        formData.firstName = document.getElementById("firstName").value;
-        formData.lastName = document.getElementById("lastName").value;
-        formData.email = document.getElementById("email").value;
     } else if (contactType === "make_complaint") {
-        formData.productNameComplaint = document.getElementById("productNameComplaint").value;
-        formData.productCode = document.getElementById("productCode").value;
-        formData.purchaseDate = document.getElementById("purchaseDate").value;
-        formData.firstNameComplaint = document.getElementById("firstNameComplaint").value;
-        formData.lastNameComplaint = document.getElementById("lastNameComplaint").value;
-        formData.emailComplaint = document.getElementById("emailComplaint").value;
+        formData.complaint = document.getElementById("complaint").value;
     }
 
     // Make an AJAX POST request to the API endpoint

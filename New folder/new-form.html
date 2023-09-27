@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+</head>
+<body>
+    <div id="level1">
+        <h1>Contact Us</h1>
+        <form id="contactForm">
+            <label for="contactType">I would like to:</label>
+            <select id="contactType" name="contactType" onchange="toggleForms()">
+                <option value="make_suggestion">Make a suggestion</option>
+                <option value="make_complaint">Make a complaint</option>
+            </select><br>
+        </form>
+    </div>
+
+    <div id="suggestionForm" style="display: none;">
+        <h1>Make a Suggestion</h1>
+        <form id="suggestionSubmissionForm">
+            <!-- Add fields for suggestion here -->
+        </form>
+    </div>
+
+    <div id="complaintForm" style="display: none;">
+        <h1>Make a Complaint</h1>
+        <form id="complaintSubmissionForm">
+            <!-- Add fields for complaint here -->
+        </form>
+    </div>
+
+    <div id="responseMessage" style="display: none;"></div>
+
+    <script>
+        function toggleForms() {
+            var contactType = document.getElementById("contactType").value;
+            var suggestionForm = document.getElementById("suggestionForm");
+            var complaintForm = document.getElementById("complaintForm");
+
+            if (contactType === "make_suggestion") {
+                suggestionForm.style.display = "block";
+                complaintForm.style.display = "none";
+            } else if (contactType === "make_complaint") {
+                suggestionForm.style.display = "none";
+                complaintForm.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
