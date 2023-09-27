@@ -2,63 +2,25 @@
 <html>
 <head>
     <title>Contact Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<style>
-
-    body{
-        background-color: #333333;
-        margin: 20px;
-        padding: 0;
-        max-width: 800px;
-    }
-
-    .field{
-        border-color: red;
-        border-radius: 5px;
-        padding-left: 12px;
-        padding-right: 12px;
-        padding-top: 8px;
-        padding-bottom: 8px;
-        margin:5px;
-        width: 600px;
-        font-size: 14px;
-        font-family: Helvetica, sans-serif;
-        color: black;
-    }
-
-    .paragraph{
-        border-color: red;
-        border-width: 2px;
-        border-radius: 5px;
-        padding-left: 12px;
-        padding-right: 12px;
-        padding-top: 8px;
-        padding-bottom: 8px;
-        margin:5px;
-        width: 600px;
-        height: 150px;
-        font-size: 14px;
-        font-family: Helvetica, sans-serif;
-        color: black;
-    }
-
-</style>
 <body>
-    <div id="level1">
-        <h1>I would like to:</h1>
-        <form id="contactForm">    
-            <select id="contactType" name="contactType">
-                <option value="make_suggestion">Make a suggestion</option>
-                <option value="make_complaint">Make a complaint</option>
-            </select><br>
-            <button type="button" onclick="showLevel2()">Next</button>
-        </form>
-    </div>
+    <div class="container">
+        <div id="level1">
+            <h1>I would like to:</h1>
+            <form id="contactForm">    
+                <select id="contactType" name="contactType">
+                    <option value="make_suggestion">Make a suggestion</option>
+                    <option value="make_complaint">Make a complaint</option>
+                </select><br>
+                <button type="button" onclick="showLevel2()">Next</button>
+            </form>
+        </div>
 
-    <div id="level2">
-        <h2>Please fill in the below fields:</h2>
-        <div id="responseMessage"></div>
-        <form id="submissionForm">
+        <div id="level2">
+            <h2>Please fill in the below fields:</h2>
+            <div id="responseMessage"></div>
+            <form id="submissionForm">
             <div id="suggestionFields">
                 <input type="text" id="firstName" name="firstName" placeholder="First Name *" class="field" required><br>
 
@@ -97,3 +59,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+

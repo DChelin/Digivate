@@ -12,6 +12,9 @@ function showLevel2() {
     }
 
     document.getElementById("level2").style.display = "block";
+
+    // Clear any existing messages
+    document.getElementById("responseMessage").innerHTML = "";
 }
 
 function submitForm() {
@@ -47,10 +50,13 @@ function submitForm() {
     .then((response) => response.json())
     .then((data) => {
         // Handle the API response here
+        var responseMessage = document.getElementById("responseMessage");
         if (data.success) {
-            document.getElementById("responseMessage").innerHTML = "Success: " + data.message;
+            responseMessage.innerHTML = "Success: " + data.message;
+            responseMessage.style.color = "green"; // Set success message color
         } else {
-            document.getElementById("responseMessage").innerHTML = "Error: " + data.message;
+            responseMessage.innerHTML = "Error: " + data.message;
+            responseMessage.style.color = "red"; // Set error message color
         }
     })
     .catch((error) => {
